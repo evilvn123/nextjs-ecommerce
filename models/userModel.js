@@ -1,4 +1,5 @@
-import { mongoose } from "mongoose";
+import mongoose from "mongoose";
+
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -19,7 +20,7 @@ const userSchema = new mongoose.Schema(
       default: "user",
     },
     root: {
-      type: String,
+      type: Boolean,
       default: false,
     },
     avatar: {
@@ -33,6 +34,5 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-let Dataset = mongoose.models.user || mongoose.models("user", userSchema);
-
+let Dataset = mongoose.models.user || mongoose.model("user", userSchema);
 export default Dataset;
