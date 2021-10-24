@@ -15,7 +15,7 @@ const Register = () => {
   const [userData, setUserData] = useState(initialState);
   const { name, email, password, cf_password } = userData;
 
-  const [state, dispatch] = useContext(DataContext);
+  const {state, dispatch} = useContext(DataContext);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -25,7 +25,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(userData);
     const errMsg = valid(name, email, password, cf_password);
     if (errMsg) return dispatch({ type: "NOTIFY", payload: { error: errMsg } });
     dispatch({ type: "NOTIFY", payload: { loading: true } });
