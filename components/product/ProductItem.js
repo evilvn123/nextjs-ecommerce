@@ -42,7 +42,7 @@ const ProductItem = ({ product }) => {
           {product.inStock > 0 ? (
             <h6 className="text-danger">In Stock: {product.inStock}</h6>
           ) : (
-            <h6 className="text-danger">Out Stock: {product.inStock}</h6>
+            <h6 className="text-danger">Out Stock</h6>
           )}
         </div>
         <p className="card-text" title={product.description}>

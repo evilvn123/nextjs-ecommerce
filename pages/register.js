@@ -16,6 +16,7 @@ const Register = () => {
   const { name, email, password, cf_password } = userData;
 
   const { state, dispatch } = useContext(DataContext);
+  const { auth } = state;
   useEffect(() => {
     if (Object.keys(auth).length !== 0) router.push("/");
   }, [auth]);

@@ -106,7 +106,7 @@ const Navbar = () => {
                     {cart.length}
                   </span>
                 </i>
-                Cart
+                
               </a>
             </Link>
           </li>
