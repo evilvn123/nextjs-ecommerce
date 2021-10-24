@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../store/GlobalState";
 import Cookies from "js-cookie";
 import { postData } from "../utils/fetchData";
+import { useRouter } from "next/router";
 
 const Signin = () => {
   const initialState = {
@@ -15,6 +16,12 @@ const Signin = () => {
 
   const { state, dispatch } = useContext(DataContext);
 
+  const { auth } = state;
+  const router = useRouter();
+
+  useEffect(() => {
+    if (Object.keys(auth).length !== 0) router.push("/");
+  }, [auth]);
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setUserData((userData) => ({ ...userData, [name]: value }));
@@ -23,7 +30,6 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const res = await postData("auth/login", userData);
     if (res.err)
       return dispatch({ type: "NOTIFY", payload: { error: res.err } });
@@ -39,7 +45,7 @@ const Signin = () => {
       expires: 7,
     });
 
-    localStorage.setItem('firstLogin', true);
+    localStorage.setItem("firstLogin", true);
   };
   return (
     <div>

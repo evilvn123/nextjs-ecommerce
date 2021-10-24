@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import valid from "../utils/valid";
 import { DataContext } from "../store/GlobalState";
 import { postData } from "../utils/fetchData";
@@ -15,7 +15,10 @@ const Register = () => {
   const [userData, setUserData] = useState(initialState);
   const { name, email, password, cf_password } = userData;
 
-  const {state, dispatch} = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
+  useEffect(() => {
+    if (Object.keys(auth).length !== 0) router.push("/");
+  }, [auth]);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
