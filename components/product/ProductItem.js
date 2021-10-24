@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { addToCart } from "../../store/Action";
+import { DataContext } from "../../store/GlobalState";
 
 const ProductItem = ({ product }) => {
+  const { state, dispatch } = useContext(DataContext);
+  const { cart } = state;
+
   const userLink = () => {
     return (
       <>
@@ -12,6 +18,8 @@ const ProductItem = ({ product }) => {
         <button
           className="btn btn-success"
           style={{ marginLeft: "5px", flex: 1 }}
+          disabled={product.inStock === 0}
+          onClick={() => dispatch(addToCart(product, cart))}
         >
           Buy
         </button>
