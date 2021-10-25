@@ -51,7 +51,7 @@ const CartItem = ({ item, dispatch, cart }) => {
           aria-hidden="true"
           style={{ fontSize: "18px" }}
           data-toggle="modal"
-          data-target="#exampleModal"
+          data-target="#modal"
           onClick={() =>
             dispatch({
               type: "ADD_MODAL",
