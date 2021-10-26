@@ -51,9 +51,10 @@ const Navbar = () => {
           {auth.user.name}
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">
-            Profile
-          </a>
+          <Link href="/profile">
+            <a className="dropdown-item">Profile</a>
+          </Link>
+
           <button className="dropdown-item" onClick={handleLogout}>
             Logout
           </button>
@@ -106,7 +107,6 @@ const Navbar = () => {
                     {cart.length}
                   </span>
                 </i>
-                
               </a>
             </Link>
           </li>

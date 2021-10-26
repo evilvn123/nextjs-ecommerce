@@ -4,6 +4,7 @@ import CartItem from "../components/CartItem";
 import { DataContext } from "../store/GlobalState";
 import Link from "next/link";
 import { getData } from "../utils/fetchData";
+import paypalBtn from "../components/paypalBtn";
 
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext);
@@ -13,6 +14,8 @@ const Cart = () => {
 
   const [address, setAddress] = useState("");
   const [mobile, setMobile] = useState("");
+
+  const [payment, setPayment] = useState(false);
 
   const getTotal = () => {
     const res = cart.reduce((prev, item) => {
@@ -25,9 +28,7 @@ const Cart = () => {
   }, [cart]);
 
   useEffect(() => {
-    const cartLocal = JSON.parse(
-      localStorage.getItem("__next__cart__dming")
-    );
+    const cartLocal = JSON.parse(localStorage.getItem("__next__cart__dming"));
     if (cartLocal && cartLocal.length > 0) {
       let newArr = [];
       const updateCart = async () => {
@@ -41,6 +42,7 @@ const Cart = () => {
               images,
               price,
               inStock,
+              sold,
               quantity: item.quantity > inStock ? 1 : item.quantity,
             });
           }
@@ -60,6 +62,15 @@ const Cart = () => {
       />
     );
 
+  const handlePayment = () => {
+    if (!address || !mobile)
+      return dispatch({
+        type: "NOTIFY",
+        payload: { error: "Please add your information." },
+      });
+    setPayment(true);
+    
+  };
   return (
     <div className="row mx-auto">
       <Head>Cart Page</Head>
@@ -106,14 +117,22 @@ const Cart = () => {
         <h3>
           Total: <span className="text-danger">${total}</span>
         </h3>
-        <Link href={auth.user ? "#!" : "/signin"}>
-          <a
-            className="btn btn-dark my-2"
-            // onClick={handlePayment}
-          >
-            Proceed with payment
-          </a>
-        </Link>
+        {/* {payment ? (
+          <paypalBtn />
+        ) : (
+          <Link href={auth.user ? "#!" : "/signin"}>
+            <a className="btn btn-dark my-2" onClick={handlePayment}>
+              Proceed with payment
+            </a>
+          </Link>
+        )} */}
+        {!payment && (
+          <Link href={auth.user ? "#!" : "/signin"}>
+            <a className="btn btn-dark my-2" onClick={handlePayment}>
+              Proceed with payment
+            </a>
+          </Link>
+        )}
       </div>
     </div>
   );

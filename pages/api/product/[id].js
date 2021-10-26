@@ -1,6 +1,5 @@
 import connectDB from "../../../utils/connectDB";
 import Products from "../../../models/productModel";
-import product from ".";
 
 connectDB();
 

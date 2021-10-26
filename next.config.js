@@ -6,6 +6,9 @@ module.exports = {
     ACCESS_TOKEN_SECRET: "dmingdeptrai20497",
     REFRESH_TOKEN_SECRET:
       "dmingdeptrai20497-010307akmscaknjncenqn1129813b3qg8dg83bcbc873",
+    CLOUD_UPDATE_PRESET: "nextjs_store",
+    CLOUD_NAME: "dming-nextjs",
+    CLOUD_API: "https://api.cloudinary.com/v1_1/dming-nextjs/image/upload",
   },
   reactStrictMode: true,
 };
