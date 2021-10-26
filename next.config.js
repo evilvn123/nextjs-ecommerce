@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    BASE_URL: "https://nextjs-ecommerce-five-phi.vercel.app",
+    BASE_URL: "http://localhost:3000",
     MONGODB_URL:
       "mongodb+srv://dming:dming123@cluster0.uw67w.mongodb.net/nextjs_ecommerce?retryWrites=true&w=majority",
     ACCESS_TOKEN_SECRET: "dmingdeptrai20497",
