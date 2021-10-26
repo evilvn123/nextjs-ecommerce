@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import CartItem from "../components/CartItem";
 import { DataContext } from "../store/GlobalState";
 import Link from "next/link";
-import { getData } from "../utils/fetchData";
+import { getData, postData } from "../utils/fetchData";
 import paypalBtn from "../components/paypalBtn";
 
 const Cart = () => {
@@ -62,14 +62,31 @@ const Cart = () => {
       />
     );
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     if (!address || !mobile)
       return dispatch({
         type: "NOTIFY",
         payload: { error: "Please add your information." },
       });
+    const res = await postData(
+      "order",
+      { address, mobile, cart, total },
+      auth.token
+    );
+    if (res.err)
+      return dispatch({
+        type: "NOTIFY",
+        payload: { error: res.err },
+      });
     setPayment(true);
-    
+    dispatch({
+      type: "ADD_CART",
+      payload: [],
+    });
+    return dispatch({
+      type: "NOTIFY",
+      payload: { success: res.msg },
+    });
   };
   return (
     <div className="row mx-auto">
@@ -127,7 +144,7 @@ const Cart = () => {
           </Link>
         )} */}
         {!payment && (
-          <Link href={auth.user ? "#!" : "/signin"}>
+          <Link href={auth.user ? "" : "/signin"}>
             <a className="btn btn-dark my-2" onClick={handlePayment}>
               Proceed with payment
             </a>
