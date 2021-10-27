@@ -90,7 +90,9 @@ const Cart = () => {
   };
   return (
     <div className="row mx-auto">
-      <Head>Giỏ hàng</Head>
+      <Head>
+        <title>Giỏ hàng</title>
+      </Head>
       <div className="col-md-8 text-secondary table-responsive my-3">
         <h2 className="text-uppercase">Giỏ hàng</h2>
         <table className="table my-3">

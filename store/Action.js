@@ -3,7 +3,9 @@ export const ACTIONS = {
   AUTH: "AUTH",
   ADD_CART: "ADD_CART",
   ADD_MODAL: "ADD_MODAL",
-  ADD_ORDERS: "ADD_ORDERS"
+  ADD_ORDERS: "ADD_ORDERS",
+  ADD_USERS: "ADD_USERS",
+  ADD_CATEGORIES: "ADD_CATEGORIES",
 };
 export const addToCart = (product, cart) => {
   if (product.inStock === 0)
