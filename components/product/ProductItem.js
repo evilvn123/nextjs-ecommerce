@@ -29,7 +29,7 @@ const ProductItem = ({ product }) => {
             className="card-img-top"
             src={product.images[0].url}
             alt="Card image cap"
-          />{" "}
+          />
         </a>
       </Link>
       <div className="card-body">

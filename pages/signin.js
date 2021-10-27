@@ -78,7 +78,7 @@ const Signin = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            name="Mật khẩu"
+            name="password"
             value={password}
             onChange={handleChangeInput}
           />
