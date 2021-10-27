@@ -127,12 +127,12 @@ export async function getServerSideProps({ query }) {
   const page = query.page || 1;
   const category = query.category || "all";
   const sort = query.sort || "";
-  const search = query.search || "all";
+  const title = query.title || "all";
 
   const res = await getData(
     `product?limit=${
       page * 3
-    }&category=${category}&sort=${sort}&title=${search}`
+    }&category=${category}&sort=${sort}&title=${title}`
   );
   // server side rendering
   return {

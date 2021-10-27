@@ -58,7 +58,7 @@ const Signin = () => {
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Địa chỉ Email</label>
+          <label className="font-weight-bold" htmlFor="exampleInputEmail1">Địa chỉ Email</label>
           <input
             type="email"
             className="form-control"
@@ -73,7 +73,7 @@ const Signin = () => {
           </small>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Mật khẩu</label>
+          <label className="font-weight-bold" htmlFor="exampleInputPassword1">Mật khẩu</label>
           <input
             type="password"
             className="form-control"
@@ -83,7 +83,7 @@ const Signin = () => {
             onChange={handleChangeInput}
           />
         </div>
-        <button type="submit" className="btn btn-dark w-100">
+        <button type="submit" className="btn btn-info w-100">
           Đăng nhâp
         </button>
         <p className="my-2">

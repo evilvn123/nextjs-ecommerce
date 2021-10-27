@@ -26,8 +26,8 @@ const DetailOrder = () => {
       </Head>
 
       <div>
-        <button className="btn btn-dark" onClick={() => router.back()}>
-          <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Go
+        <button className="btn btn-info" onClick={() => router.back()}>
+          <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i>
           Quay lại
         </button>
       </div>

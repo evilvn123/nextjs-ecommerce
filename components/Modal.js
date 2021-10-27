@@ -86,7 +86,7 @@ const Modal = () => {
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-danger"
               data-dismiss="modal"
               onClick={handleSubmit}
             >
@@ -94,7 +94,7 @@ const Modal = () => {
             </button>
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-info"
               data-dismiss="modal"
             >
               Không

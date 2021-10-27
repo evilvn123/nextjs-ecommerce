@@ -33,7 +33,7 @@ const OrderDetail = ({ order, state, dispatch }) => {
           {order.delivered ? `Giao vào ${order.updatedAt}` : "Chưa giao"}
           {auth.user.role === "admin" && !order.delivered && (
             <button
-              className="btn btn-dark text-uppercase"
+              className="btn btn-info text-uppercase"
               onClick={() => handleDelivered(order._id)}
             >
               Đánh dấu đã giao

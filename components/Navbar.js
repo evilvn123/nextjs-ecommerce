@@ -83,7 +83,14 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link href="/">
-        <a className="navbar-brand">Dming</a>
+        <a className="navbar-brand">
+          <img
+            src="./logo.png"
+            alt="logo"
+            style={{ width: "70px", height: "50px", background: "transparent", objectFit: 'cover' }}
+          />
+          Dming Shop
+        </a>
       </Link>
 
       <button
@@ -105,7 +112,7 @@ const Navbar = () => {
         <ul className="navbar-nav">
           <li className={"nav-item" + isActive("/cart")}>
             <Link href="/cart">
-              <a className="nav-link">
+              <a className="nav-link  text-info">
                 <i
                   className="fas fa-shopping-cart position-relative"
                   aria-hidden="true"
@@ -131,7 +138,7 @@ const Navbar = () => {
           {Object.keys(auth).length === 0 ? (
             <li className={"nav-item" + isActive("/signin")}>
               <Link href="/signin">
-                <a className="nav-link">
+                <a className="nav-link text-info">
                   <i className="fas fa-user" aria-hidden="true"></i>
                   Sign in
                 </a>
@@ -141,20 +148,6 @@ const Navbar = () => {
             loggedRouter()
           )}
         </ul>
-        {/* <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form> */}
       </div>
     </nav>
   );

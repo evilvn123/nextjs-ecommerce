@@ -140,14 +140,14 @@ const Cart = () => {
           <paypalBtn />
         ) : (
           <Link href={auth.user ? "#!" : "/signin"}>
-            <a className="btn btn-dark my-2" onClick={handlePayment}>
+            <a className="btn btn-info my-2" onClick={handlePayment}>
               Proceed with payment
             </a>
           </Link>
         )} */}
         {!payment && (
           <Link href={auth.user ? "" : "/signin"}>
-            <a className="btn btn-dark my-2" onClick={handlePayment}>
+            <a className="btn btn-info my-2" onClick={handlePayment}>
               Đặt hàng
             </a>
           </Link>

@@ -67,7 +67,7 @@ const Categories = () => {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <button className="btn btn-secondary ml-1" onClick={createCategory}>
+        <button className="btn btn-info ml-1" onClick={createCategory}>
           {id ? "Cập nhật" : "Tạo mới"}
         </button>
       </div>

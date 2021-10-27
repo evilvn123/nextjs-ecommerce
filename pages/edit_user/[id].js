@@ -63,7 +63,7 @@ const EditUser = () => {
       </Head>
 
       <div>
-        <button className="btn btn-dark" onClick={() => router.back()}>
+        <button className="btn btn-info" onClick={() => router.back()}>
           <i className="fas fa-long-arrow-alt-left" aria-hidden></i> Quay lại
         </button>
       </div>
@@ -107,7 +107,7 @@ const EditUser = () => {
           </label>
         </div>
 
-        <button className="btn btn-dark" onClick={handleSubmit}>
+        <button className="btn btn-info" onClick={handleSubmit}>
           Cập nhật
         </button>
       </div>

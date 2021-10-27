@@ -3,7 +3,7 @@ import filterSearch from "../utils/filterSearch";
 import { useRouter } from "next/router";
 
 const Filter = ({ state }) => {
-  const [search, setSearch] = useState("");
+  const [title, setTitle] = useState("");
   const [sort, setSort] = useState("");
   const [category, setCategory] = useState("");
 
@@ -22,8 +22,8 @@ const Filter = ({ state }) => {
   };
 
   useEffect(() => {
-    filterSearch({ router, search: search ? search.toLowerCase() : "all" });
-  }, [search]);
+    filterSearch({ router, title: !!title ? title.toLowerCase() : "all" });
+  }, [title]);
 
   return (
     <div className="input-group">
@@ -48,8 +48,8 @@ const Filter = ({ state }) => {
           type="text"
           className="form-control"
           list="title_product"
-          value={search.toLowerCase()}
-          onChange={(e) => setSearch(e.target.value)}
+          value={title.toLowerCase()}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </form>
 

@@ -55,7 +55,7 @@ const DetailProduct = ({ productProp }) => {
         <div className="my-2">{product.content}</div>
         <button
           type="button"
-          className="btn btn-dark d-block my-3 px-5"
+          className="btn btn-info d-block my-3 px-5"
           onClick={() => dispatch(addToCart(product, cart))}
         >
           Mua

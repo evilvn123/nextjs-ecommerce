@@ -50,7 +50,9 @@ const Register = () => {
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Tên</label>
+          <label className="font-weight-bold" htmlFor="exampleInputEmail1">
+            Tên
+          </label>
           <input
             type="text"
             className="form-control"
@@ -61,7 +63,9 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Địa chỉ Email</label>
+          <label className="font-weight-bold" htmlFor="exampleInputEmail1">
+            Địa chỉ Email
+          </label>
           <input
             type="email"
             className="form-control"
@@ -76,7 +80,9 @@ const Register = () => {
           </small>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Mật khẩu</label>
+          <label className="font-weight-bold" htmlFor="exampleInputPassword1">
+            Mật khẩu
+          </label>
           <input
             type="password"
             className="form-control"
@@ -87,7 +93,9 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword2">Xác nhận mật khẩu</label>
+          <label className="font-weight-bold" htmlFor="exampleInputPassword2">
+            Xác nhận mật khẩu
+          </label>
           <input
             type="password"
             className="form-control"
@@ -97,7 +105,7 @@ const Register = () => {
             onChange={handleChangeInput}
           />
         </div>
-        <button type="submit" className="btn btn-dark w-100">
+        <button type="submit" className="btn btn-info w-100">
           Register
         </button>
         <p className="my-2">
