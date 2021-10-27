@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { addToCart } from "../../store/Action";
 import { DataContext } from "../../store/GlobalState";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, handleCheck }) => {
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth } = state;
 
@@ -56,6 +56,15 @@ const ProductItem = ({ product }) => {
   };
   return (
     <div className="card" style={{ width: "18rem" }}>
+      {auth.user && auth.user.role === "admin" && (
+        <input
+          type="checkbox"
+          checked={product.checked}
+          className="position-absolute"
+          style={{ height: "20px", width: "20px" }}
+          onChange={() => handleCheck(product._id)}
+        />
+      )}
       <Link href={`/product/${product._id}`}>
         <a style={{ textDecoration: "none", color: "inherit" }}>
           <img

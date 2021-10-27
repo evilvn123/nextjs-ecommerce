@@ -19,7 +19,7 @@ export default async (req, res) => {
 const updateCategory = async (req, res) => {
   try {
     const result = await auth(req, res);
-    if (result.role !== "admin")
+    if (result.role === "admin")
       return res.status(400).json({ err: "Xác thực không hợp lệ." });
 
     const { id } = req.query;
