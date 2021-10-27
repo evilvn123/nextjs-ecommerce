@@ -20,7 +20,7 @@ const updateCategory = async (req, res) => {
   try {
     const result = await auth(req, res);
     if (result.role !== "admin")
-      return res.status(400).json({ err: "Authentication is not valid." });
+      return res.status(400).json({ err: "Xác thực không hợp lệ." });
 
     const { id } = req.query;
     const { name } = req.body;
@@ -45,7 +45,7 @@ const deleteCategory = async (req, res) => {
   try {
     const result = await auth(req, res);
     if (result.role !== "admin")
-      return res.status(400).json({ err: "Authentication is not valid." });
+      return res.status(400).json({ err: "Xác thực không hợp lệ." });
 
     const { id } = req.query;
 

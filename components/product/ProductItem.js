@@ -5,7 +5,7 @@ import { DataContext } from "../../store/GlobalState";
 
 const ProductItem = ({ product }) => {
   const { state, dispatch } = useContext(DataContext);
-  const { cart } = state;
+  const { cart, auth } = state;
 
   const userLink = () => {
     return (
@@ -17,6 +17,39 @@ const ProductItem = ({ product }) => {
           onClick={() => dispatch(addToCart(product, cart))}
         >
           Mua
+        </button>
+      </>
+    );
+  };
+
+  const adminLink = () => {
+    return (
+      <>
+        <Link href={`create/${product._id}`}>
+          <a className="btn btn-info" style={{ marginRight: "5px", flex: 1 }}>
+            Sửa
+          </a>
+        </Link>
+        <button
+          className="btn btn-danger"
+          style={{ marginLeft: "5px", flex: 1 }}
+          data-toggle="modal"
+          data-target="#modal"
+          onClick={() =>
+            dispatch({
+              type: "ADD_MODAL",
+              payload: [
+                {
+                  data: "",
+                  id: product._id,
+                  title: product.title,
+                  type: "DELETE_PRODUCT",
+                },
+              ],
+            })
+          }
+        >
+          Xoá
         </button>
       </>
     );
@@ -48,7 +81,9 @@ const ProductItem = ({ product }) => {
           {product.description}
         </p>
 
-        <div className="row justify-content-center mx-0">{userLink()}</div>
+        <div className="row justify-content-between mx-0">
+          {!auth.user || auth.user.role !== "admin" ? userLink() : adminLink()}
+        </div>
       </div>
     </div>
   );

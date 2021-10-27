@@ -1,11 +1,11 @@
 const valid = (name, email, password, cf_password) => {
-  if (!name || !email || !password) return "Please add all fields!";
+  if (!name || !email || !password) return "Hãy điền đầy đủ thông tin!";
 
-  if (!validateEmail(email)) return "Invalid email!";
+  if (!validateEmail(email)) return "Email không hợp lệ!";
 
-  if (password.length < 6) return "Password must be at least 6 characters.";
+  if (password.length < 6) return "Mật khẩu tối thiểu 6 ký tự.";
 
-  if (password != cf_password) return "Confirm password did not match.";
+  if (password != cf_password) return "Mật khẩu không trùng khớp.";
 };
 
 function validateEmail(email) {

@@ -66,7 +66,7 @@ const Cart = () => {
     if (!address || !mobile)
       return dispatch({
         type: "NOTIFY",
-        payload: { error: "Please add your information." },
+        payload: { error: "Hãy điền đầy đủ thông tin." },
       });
     const res = await postData(
       "order",

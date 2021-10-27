@@ -83,19 +83,19 @@ const Profile = () => {
     if (!file) {
       return dispatch({
         type: "NOTIFY",
-        payload: { error: "File does not exist." },
+        payload: { error: "File không tồn tại." },
       });
     }
     if (file.size > 1024 * 1024) {
       return dispatch({
         type: "NOTIFY",
-        payload: { error: "The largest image size is 1MB." },
+        payload: { error: "Kích thước lớn nhất là 1MB." },
       });
     }
     if (file.type !== "image/jpeg" && file.type !== "image/png") {
       return dispatch({
         type: "NOTIFY",
-        payload: { error: "Image format is incorrect." },
+        payload: { error: "Ảnh không đúng định dạng." },
       });
     }
 

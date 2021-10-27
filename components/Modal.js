@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import { deleteItem } from "../store/Action";
 import { DataContext } from "../store/GlobalState";
@@ -7,6 +8,8 @@ const Modal = () => {
   const { state, dispatch } = useContext(DataContext);
 
   const { modal, auth } = state;
+
+  const router = useRouter();
 
   const deleteUser = (item) => {
     dispatch(deleteItem(item.data, item.id, item.type));
@@ -68,7 +71,7 @@ const Modal = () => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title text-capitalize" id="exampleModalLabel">
-              {modal.length !== 0 && modal[0]?.title }
+              {modal.length !== 0 && modal[0]?.title}
             </h5>
             <button
               type="button"

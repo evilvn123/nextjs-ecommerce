@@ -43,7 +43,7 @@ const getUsers = async (req, res) => {
   try {
     const result = await auth(req, res);
     if (result.role !== "admin")
-      return res.status(400).json({ err: "Authentication is not valid." });
+      return res.status(400).json({ err: "Xác thực không hợp lệ." });
 
     const users = await Users.find().select("-password");
     res.json({
