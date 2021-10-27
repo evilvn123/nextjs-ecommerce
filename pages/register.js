@@ -50,7 +50,7 @@ const Register = () => {
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Name</label>
+          <label htmlFor="exampleInputEmail1">Tên</label>
           <input
             type="text"
             className="form-control"
@@ -61,7 +61,7 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Địa chỉ Email</label>
           <input
             type="email"
             className="form-control"
@@ -72,11 +72,11 @@ const Register = () => {
             onChange={handleChangeInput}
           />
           <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
+            Thông tin của bạn sẽ được giữ kín.
           </small>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
+          <label htmlFor="exampleInputPassword1">Mật khẩu</label>
           <input
             type="password"
             className="form-control"
@@ -87,7 +87,7 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword2">Confirm Password</label>
+          <label htmlFor="exampleInputPassword2">Xác nhận mật khẩu</label>
           <input
             type="password"
             className="form-control"
@@ -101,9 +101,9 @@ const Register = () => {
           Register
         </button>
         <p className="my-2">
-          Already have an account?
+          Đã có tài khoản?
           <Link href="/signin">
-            <a style={{ color: "crimson" }}> Login Now</a>
+            <a style={{ color: "crimson" }}> Đăng nhập</a>
           </Link>
         </p>
       </form>

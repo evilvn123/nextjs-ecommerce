@@ -106,12 +106,12 @@ const Profile = () => {
       {!!auth.user && (
         <div className="profile_page">
           <Head>
-            <title>Profile </title>
+            <title>Hồ sơ </title>
           </Head>
           <section className="row text-secondary">
             <div className="col-md-4">
-              <h3 className="text-center text-uppercase">
-                {auth.user.role === "user" ? "User Profile" : "Admin Profile"}
+              <h3 className="text-uppercase">
+                {auth.user.role === "user" ? "Người dùng" : "Admin"}
               </h3>
               <div className="avatar">
                 <img
@@ -120,7 +120,7 @@ const Profile = () => {
                 />
                 <span>
                   <i className="fas fa-camera"></i>
-                  <p>Change</p>
+                  <p>Thay đổi</p>
                   <input
                     type="file"
                     name="file"
@@ -130,18 +130,18 @@ const Profile = () => {
                 </span>
               </div>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Tên</label>
                 <input
                   type="text"
                   name="name"
                   value={name}
                   className="form-control"
-                  placeholder="Your name"
+                  placeholder="Tên của bạn"
                   onChange={onChangeInput}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Email</label>
+                <label htmlFor="name">Địa chỉ Email</label>
                 <input
                   type="text"
                   name="email"
@@ -151,24 +151,24 @@ const Profile = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Password</label>
+                <label htmlFor="name">Mật khẩu</label>
                 <input
                   type="password"
                   name="password"
                   value={password}
                   className="form-control"
-                  placeholder="Your password"
+                  placeholder="Mật khẩu của bạn"
                   onChange={onChangeInput}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Confirm New Password</label>
+                <label htmlFor="name">Xác nhận mật khẩu</label>
                 <input
                   type="password"
                   name="cf_password"
                   value={cf_password}
                   className="form-control"
-                  placeholder="Confirm new password"
+                  placeholder="Xác nhận mật khẩu"
                   onChange={onChangeInput}
                 />
               </div>
@@ -177,11 +177,11 @@ const Profile = () => {
                 disabled={notify.loading}
                 onClick={handleUpdateProfile}
               >
-                Update
+                Cập nhật
               </button>
             </div>
             <div className="col-md-8 table-responsive">
-              <h3 className="text-uppercase">Orders</h3>
+              <h3 className="text-uppercase">Đơn hàng</h3>
               <div className="my-3">
                 <table
                   className="table-bordered table-hover w-100 text-uppercase"
@@ -190,10 +190,10 @@ const Profile = () => {
                   <thead className="bg-light font-weight-bold">
                     <tr>
                       <td className="p-2">id</td>
-                      <td className="p-2">date</td>
-                      <td className="p-2">total</td>
-                      <td className="p-2">delivered</td>
-                      <td className="p-2">action</td>
+                      <td className="p-2">ngày tạo</td>
+                      <td className="p-2">tổng</td>
+                      <td className="p-2">trạng thái giao hàng</td>
+                      <td className="p-2">Thao tác</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -213,7 +213,7 @@ const Profile = () => {
                         </td>
                         <td className="p-2">
                           <Link href={`/order/${order._id}`}>
-                            <a>details</a>
+                            <a>chi tiết</a>
                           </Link>
                         </td>
                       </tr>

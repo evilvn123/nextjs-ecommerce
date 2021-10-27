@@ -20,9 +20,9 @@ const CartItem = ({ item, dispatch, cart }) => {
         </h5>
         <h6 className="text-danger">${item.quantity * item.price}</h6>
         {item.inStock > 0 ? (
-          <p className="mb-1 text-danger">In Stock: {item.inStock}</p>
+          <p className="mb-1 text-danger">Trong kho: {item.inStock}</p>
         ) : (
-          <p className="mb-1 text-danger">Out Stock</p>
+          <p className="mb-1 text-danger">Hết hàng</p>
         )}
       </td>
       <td className="align-middle" style={{ minWidth: "150px" }}>

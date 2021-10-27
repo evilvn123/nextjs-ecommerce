@@ -48,7 +48,7 @@ const Modal = () => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="modal-body">Do you want to delete this item?</div>
+          <div className="modal-body">Bạn muốn xoá?</div>
           <div className="modal-footer">
             <button
               type="button"
@@ -56,14 +56,14 @@ const Modal = () => {
               data-dismiss="modal"
               onClick={handleSubmit}
             >
-              Yes
+              Xác nhận
             </button>
             <button
               type="button"
               className="btn btn-primary"
               data-dismiss="modal"
             >
-              Cancel
+              Không
             </button>
           </div>
         </div>

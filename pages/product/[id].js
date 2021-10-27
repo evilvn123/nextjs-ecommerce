@@ -18,7 +18,7 @@ const DetailProduct = ({ productProp }) => {
   return (
     <div className="row detail_page">
       <Head>
-        <title>Detail Product</title>
+        <title>Chi tiết sản phẩm</title>
       </Head>
       <div className="col-md-6">
         <img
@@ -45,11 +45,11 @@ const DetailProduct = ({ productProp }) => {
         <h5 className="text-danger">${product.price}</h5>
         <div className="row mx-0  d-flex justify-content-between">
           {product.inStock > 0 ? (
-            <h6 className="text-danger">In Stock: {product.inStock}</h6>
+            <h6 className="text-danger">Trong kho: {product.inStock}</h6>
           ) : (
-            <h6 className="text-danger">Out Stock</h6>
+            <h6 className="text-danger">Hết hàng</h6>
           )}
-          <h6 className="text-danger">Sold: {product.sold}</h6>
+          <h6 className="text-danger">Đã bán: {product.sold}</h6>
         </div>
         <div className="my-2">{product.description}</div>
         <div className="my-2">{product.content}</div>
@@ -58,7 +58,7 @@ const DetailProduct = ({ productProp }) => {
           className="btn btn-dark d-block my-3 px-5"
           onClick={() => dispatch(addToCart(product, cart))}
         >
-          Buy
+          Mua
         </button>
       </div>
     </div>

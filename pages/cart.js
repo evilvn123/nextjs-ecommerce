@@ -90,9 +90,9 @@ const Cart = () => {
   };
   return (
     <div className="row mx-auto">
-      <Head>Cart Page</Head>
+      <Head>Giỏ hàng</Head>
       <div className="col-md-8 text-secondary table-responsive my-3">
-        <h2 className="text-uppercase">Shopping Cart</h2>
+        <h2 className="text-uppercase">Giỏ hàng</h2>
         <table className="table my-3">
           <tbody>
             {cart.map((item) => (
@@ -108,9 +108,9 @@ const Cart = () => {
       </div>
       <div className="col-md-4 my-3 text-right text-uppercase text-secondary">
         <form>
-          <h2>Shipping</h2>
+          <h2>Thông tin</h2>
 
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">Địa chỉ</label>
           <input
             type="text"
             name="address"
@@ -120,7 +120,7 @@ const Cart = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
 
-          <label htmlFor="mobile">Mobile</label>
+          <label htmlFor="mobile">Điện thoại</label>
           <input
             type="text"
             name="mobile"
@@ -146,7 +146,7 @@ const Cart = () => {
         {!payment && (
           <Link href={auth.user ? "" : "/signin"}>
             <a className="btn btn-dark my-2" onClick={handlePayment}>
-              Proceed with payment
+              Đặt hàng
             </a>
           </Link>
         )}

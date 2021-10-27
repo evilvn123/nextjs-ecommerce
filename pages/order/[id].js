@@ -22,25 +22,25 @@ const DetailOrder = () => {
   return (
     <div className="my-3">
       <Head>
-        <title>Detail Orders</title>
+        <title>Chi tiết đơn hàng</title>
       </Head>
 
       <div>
         <button className="btn btn-dark" onClick={() => router.back()}>
           <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Go
-          Back
+          Quay lại
         </button>
       </div>
       <div style={{ maxWidth: "600px", margin: "20px auto" }}>
         {orderDetail.map((order) => (
           <div key={order._id} className="text-uppercase my-3">
-            <h2 className="text-break">Order {order._id}</h2>
+            <h2 className="text-break">Đơn hàng {order._id}</h2>
             <div className="mt-4 text-secondary">
-              <h4>Shipping</h4>
-              <p>Name: {order.user.name}</p>
+              <h4>Thông tin nhận hàng</h4>
+              <p>Tên: {order.user.name}</p>
               <p>Email: {order.user.email}</p>
-              <p>Address: {order.address}</p>
-              <p>Mobile: {order.mobile}</p>
+              <p>Địa chỉ: {order.address}</p>
+              <p>Điện thoại: {order.mobile}</p>
               <div
                 className={`alert ${
                   order.delivered ? "alert-success" : "alert-danger"
@@ -48,8 +48,8 @@ const DetailOrder = () => {
                 role="alert"
               >
                 {order.delivered
-                  ? `Deliver on ${order.updateAt}`
-                  : "Not Delivered"}
+                  ? `Giao vào ${order.updateAt}`
+                  : "Chưa giao"}
               </div>
               <div>
                 <h4>Order Items</h4>

@@ -52,11 +52,11 @@ const Navbar = () => {
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
           <Link href="/profile">
-            <a className="dropdown-item">Profile</a>
+            <a className="dropdown-item">Hồ sơ</a>
           </Link>
 
           <button className="dropdown-item" onClick={handleLogout}>
-            Logout
+            Đăng xuất
           </button>
         </div>
       </li>

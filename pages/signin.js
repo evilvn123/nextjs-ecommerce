@@ -50,7 +50,7 @@ const Signin = () => {
   return (
     <div>
       <Head>
-        <title>Sign in Page</title>
+        <title>Đăng nhập</title>
       </Head>
       <form
         className="mx-auto my-4"
@@ -58,7 +58,7 @@ const Signin = () => {
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Địa chỉ Email</label>
           <input
             type="email"
             className="form-control"
@@ -69,27 +69,27 @@ const Signin = () => {
             onChange={handleChangeInput}
           />
           <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
+            Thông tin của bạn sẽ được giữ kín.
           </small>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
+          <label htmlFor="exampleInputPassword1">Mật khẩu</label>
           <input
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            name="password"
+            name="Mật khẩu"
             value={password}
             onChange={handleChangeInput}
           />
         </div>
         <button type="submit" className="btn btn-dark w-100">
-          Login
+          Đăng nhâp
         </button>
         <p className="my-2">
-          You don't have an account?
+          Chưa có tài khoản?
           <Link href="/register">
-            <a style={{ color: "crimson" }}> Register</a>
+            <a style={{ color: "crimson" }}> Đăng ký</a>
           </Link>
         </p>
       </form>

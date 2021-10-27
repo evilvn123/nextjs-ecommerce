@@ -8,10 +8,10 @@ export default function Home(props) {
   return (
     <div className="products">
       <Head>
-        <title>Home page</title>
+        <title>Trang chủ</title>
       </Head>
       {products.length === 0 ? (
-        <h2>No products</h2>
+        <h2>Không có sản phẩm</h2>
       ) : (
         products.map((product) => (
           <ProductItem key={product._id} product={product} />
